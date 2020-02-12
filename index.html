@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="SearchDiv">
+      <div class="SearchWeather">
+        <input
+          placeholder="get weather info by city"
+          type="search"
+          class="SearchFld"
+        />
+        <button class="SearchBtn">Search</button>
+      </div>
+    </div>
+    <div class="DateSUV">
+      <p class="calendarP">
+        <img src="icons/Calendar.png" width="25" height="25" />
+        <sup id="DateSup"></sup>
+      </p>
+      <p class="SUVIndicator">
+        <sup id="SUVNumber">UV(7): Severe, avoid sun exposure</sup>
+      </p>
+    </div>
+    <div class="container">
+      <div class="location">
+        <h1 calss="location-timezone">TimeZone</h1>
+        <p>Icon</p>
+      </div>
+      <div class="temprerature">
+        <h2 class="temperature-degree">34</h2>
+        <span>F</span>
+        <div class="temperature-description">Its friggin cold</div>
+      </div>
+      <div class="AdditionalDaysDiv">
+        <h3 style="color: darkkhaki; text-align: center;">
+          Four-Day Weather Forecast
+        </h3>
+        <table class="AdditionalDayTable">
+          <tbody>
+            <tr>
+              <td>Day2</td>
+              <td>Day3</td>
+              <td>Day4</td>
+              <td>Day5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
