@@ -74,7 +74,7 @@ body {
   width: 90%;
   max-width: 500px;
   padding: 5px;
-  font-size: 20px;
+  font-size: 15px;
   color: gainsboro;
 }
 
@@ -93,6 +93,7 @@ body {
 .AdditionalDayTable tbody tr td {
   border-radius: 5px;
   border: 1px solid yellowgreen;
+  text-align: center;
 }
 
 .AdditionalDaysDiv {
