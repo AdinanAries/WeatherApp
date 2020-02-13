@@ -22,7 +22,7 @@ body {
   align-items: center;
   background: rgba(48, 156, 156);
   width: 90%;
-  max-width: 800px;
+  max-width: 500px;
   border-radius: 5px;
   box-shadow: 2px 2px 2px rgb(29, 43, 124);
   min-height: 400px;
@@ -72,7 +72,7 @@ body {
 }
 .DateSUV {
   width: 90%;
-  max-width: 800px;
+  max-width: 500px;
   padding: 5px;
   font-size: 20px;
   color: gainsboro;
@@ -88,7 +88,6 @@ body {
   font-size: 14px;
   margin-top: 5px;
   min-width: 320px;
-  height: 200px;
   border-spacing: 4px;
 }
 .AdditionalDayTable tbody tr td {
@@ -98,4 +97,35 @@ body {
 
 .AdditionalDaysDiv {
   margin-top: 15px;
+}
+
+.ExtraDaysIcons {
+  max-width: 60px;
+}
+.temperature-description {
+  color: rgb(59, 38, 1);
+}
+
+.TodayWeatherIcon {
+  min-width: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.location-timezone {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.temprerature {
+  width: 100%;
+  text-align: center;
+}
+.location {
+  width: 100%;
+  text-align: center;
+}
+
+.ExtraDaysTemp {
+  text-align: center;
 }

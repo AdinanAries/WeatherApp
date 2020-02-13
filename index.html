@@ -28,30 +28,57 @@
     </div>
     <div class="container">
       <div class="location">
-        <h1 calss="location-timezone">TimeZone</h1>
-        <p>Icon</p>
+        <h2 class="location-timezone"></h2>
+        <p><img class="TodayWeatherIcon" /></p>
       </div>
       <div class="temprerature">
-        <h2 class="temperature-degree">34</h2>
-        <span>F</span>
-        <div class="temperature-description">Its friggin cold</div>
+        <h2 class="temperature-degree"></h2>
+        <div class="temperature-description"></div>
+        <sub class="temperature-time"></sub>
       </div>
       <div class="AdditionalDaysDiv">
         <h3 style="color: darkkhaki; text-align: center;">
-          Four-Day Weather Forecast
+          Weather Forecast
         </h3>
         <table class="AdditionalDayTable">
           <tbody>
             <tr>
-              <td>Day2</td>
-              <td>Day3</td>
-              <td>Day4</td>
-              <td>Day5</td>
+              <td>
+                <p id="Day2">13th, Thu</p>
+                <img class="ExtraDaysIcons" id="Day2Icon" />
+                <div class="ExtraDaysDesc">
+                  <p class="ExtraDaysTemp" id="Day2Temp"></p>
+                </div>
+              </td>
+              <td>
+                <p id="Day3">14th, Fri</p>
+                <img class="ExtraDaysIcons" id="Day3Icon" />
+                <div class="ExtraDaysDesc">
+                  <p class="ExtraDaysTemp" id="Day3Temp"></p>
+                </div>
+              </td>
+              <td>
+                <p id="Day4">15th, Sat</p>
+                <img class="ExtraDaysIcons" id="Day4Icon" />
+                <div class="ExtraDaysDesc">
+                  <p class="ExtraDaysTemp" id="Day4Temp"></p>
+                </div>
+              </td>
+              <td>
+                <p id="Day5">16th, Sun</p>
+                <img class="ExtraDaysIcons" id="Day5Icon" />
+                <div class="ExtraDaysDesc">
+                  <p class="ExtraDaysTemp" id="Day5Temp"></p>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
