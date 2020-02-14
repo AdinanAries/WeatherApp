@@ -29,39 +29,34 @@ var Month = [
 //below is an array of objects used to specify or describe UV data whose returned value from API is of float or double type
 var UVIObjects = [
   {
-    value: 1, //value to compare with API returned value
-    Desc: "",
-    Rem: ""
+    value: "1-2", //value to compare with API returned value
+    Desc: "Low",
+    Rem: "Cover head and/or eyes",
+    color: "green"
   },
   {
-    value: 1,
-    Desc: "",
-    Rem: ""
+    value: "3-5",
+    Desc: "Moderate",
+    Rem: "Use low SPF sunscreen",
+    color: "yellow"
   },
   {
-    value: 1,
-    Desc: "",
-    Rem: ""
+    value: "6-7",
+    Desc: "High",
+    Rem: "Spend little time outdoors",
+    color: "orange"
   },
   {
-    value: 1,
-    Desc: "",
-    Rem: ""
+    value: "8-10",
+    Desc: "Very High",
+    Rem: "Do not spend time outdoors",
+    color: "red"
   },
   {
-    value: 1,
-    Desc: "",
-    Rem: ""
-  },
-  {
-    value: 1,
-    Desc: "",
-    Rem: ""
-  },
-  {
-    value: 1,
-    Desc: "",
-    Rem: ""
+    value: "11+",
+    Desc: "Extreme",
+    Rem: "Don't go out",
+    color: "violet"
   }
 ];
 
@@ -429,8 +424,80 @@ function getCurrentUV(lat, long) {
     data: "appid=70ef0ec48add544e91d4d3f76b0ae626&lat=" + lat + "&lon=" + long,
     success: function(resp) {
       console.log(resp);
+      var UVValue = Math.floor(resp.value);
+
+      if (UVValue <= 2) {
+        let SUVNumber = document.getElementById("SUVNumber");
+        let UVNum = UVIObjects[0].value;
+        let UVRem = UVIObjects[0].Rem;
+        let UVDesc = UVIObjects[0].Desc;
+        let UVCol = UVIObjects[0].color;
+
+        let UvDisplay = `UV(${UVNum}): ${UVRem}, ${UVDesc}`;
+        SUVNUmber.innerText = UvDisplay;
+        SUVNumber.style.borderLeft = "25px solid " + UVCol;
+      }
+
+      if (UVValue > 2 && UVValue <= 5) {
+        let SUVNumber = document.getElementById("SUVNumber");
+        let UVNum = UVIObjects[1].value;
+        let UVRem = UVIObjects[1].Rem;
+        let UVDesc = UVIObjects[1].Desc;
+        let UVCol = UVIObjects[1].color;
+
+        let UvDisplay = `UV(${UVNum}): ${UVRem}, ${UVDesc}`;
+        SUVNUmber.innerText = UvDisplay;
+        SUVNumber.style.borderLeft = "25px solid " + UVCol;
+      }
+
+      if (UVValue > 5 && UVValue <= 7) {
+        let SUVNumber = document.getElementById("SUVNumber");
+        let UVNum = UVIObjects[2].value;
+        let UVRem = UVIObjects[2].Rem;
+        let UVDesc = UVIObjects[2].Desc;
+        let UVCol = UVIObjects[2].color;
+
+        let UvDisplay = `UV(${UVNum}): ${UVRem}, ${UVDesc}`;
+        SUVNUmber.innerText = UvDisplay;
+        SUVNumber.style.borderLeft = "25px solid " + UVCol;
+      }
+
+      if (UVValue > 7 && UVValue <= 10) {
+        var SUVNumber = document.getElementById("SUVNumber");
+        let UVNum = UVIObjects[3].value;
+        let UVRem = UVIObjects[3].Rem;
+        let UVDesc = UVIObjects[3].Desc;
+        let UVCol = UVIObjects[3].color;
+
+        let UvDisplay = `UV(${UVNum}): ${UVRem}, ${UVDesc}`;
+        SUVNUmber.innerText = UvDisplay;
+        SUVNumber.style.borderLeft = "25px solid " + UVCol;
+      }
+
+      if (UVValue >= 11) {
+        let SUVNumber = document.getElementById("SUVNumber");
+        let UVNum = UVIObjects[4].value;
+        let UVRem = UVIObjects[4].Rem;
+        let UVDesc = UVIObjects[4].Desc;
+        let UVCol = UVIObjects[4].color;
+
+        let UvDisplay = `UV(${UVNum}): ${UVRem}, ${UVDesc}`;
+        SUVNUmber.innerText = UvDisplay;
+        SUVNumber.style.borderLeft = "25px solid " + UVCol;
+      }
     }
   });
 }
 
-//function getUVByCitySearch(city) {}
+/*
+
+function getCityUV(city) {
+  $.ajax({
+    type: "GET",
+    url: "http://api.openweathermap.org/data/2.5/uvi",
+    data: "appid=70ef0ec48add544e91d4d3f76b0ae626&q=" + city,
+    success: function(resp) {
+      console.log(resp);
+    }
+  });
+}*/
