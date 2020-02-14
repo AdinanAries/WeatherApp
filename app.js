@@ -26,6 +26,45 @@ var Month = [
   "December"
 ];
 
+//below is an array of objects used to specify or describe UV data whose returned value from API is of float or double type
+var UVIObjects = [
+  {
+    value: 1, //value to compare with API returned value
+    Desc: "",
+    Rem: ""
+  },
+  {
+    value: 1,
+    Desc: "",
+    Rem: ""
+  },
+  {
+    value: 1,
+    Desc: "",
+    Rem: ""
+  },
+  {
+    value: 1,
+    Desc: "",
+    Rem: ""
+  },
+  {
+    value: 1,
+    Desc: "",
+    Rem: ""
+  },
+  {
+    value: 1,
+    Desc: "",
+    Rem: ""
+  },
+  {
+    value: 1,
+    Desc: "",
+    Rem: ""
+  }
+];
+
 var Today = new Date();
 
 const Day2 = new Date(Today);
@@ -197,19 +236,11 @@ function locationErrorHandling(error) {
 
 function getLocation() {
   if (navigator.geolocation) {
-    /*var watchID = navigator.geolocation.watchPosition(
-      showPosition,
-      locationErrorHandling,
-      locationOptions
-    );*/
     navigator.geolocation.getCurrentPosition(
       showPosition,
       locationErrorHandling,
       locationOptions
     );
-    //navigator.geolocation.getCurrentPosition(showPosition, locationErrorHandling, locationOptions);
-    //alert(watchID);
-    //navigator.geolocation.clearWatch(watchID);
   } else {
     alert("Location is not supported by this browser.");
   }
@@ -261,15 +292,8 @@ function OnPageLoadAPICall(lat, long) {
     data:
       "lat=" + lat + "&lon=" + long + "&appid=70ef0ec48add544e91d4d3f76b0ae626",
     success: function(data) {
-      //alert(data.list[0].weather[0].main);
-      console.log(data);
-      console.log(data.list[0].weather[0].main);
-
       document.querySelector(".location-timezone").innerText =
         data.city.name + ", " + data.city.country;
-
-      /*document.querySelector(".temperature-time").innerText =
-        data.list[0].dt_txt;*/
 
       //setting Icons
 
@@ -309,6 +333,8 @@ function OnPageLoadAPICall(lat, long) {
       $("#Day5Temp").text(KelvToFeh(data.list[23].main.temp) + "°F");
     }
   });
+
+  getCurrentUV(lat, long);
 }
 
 //Search Function to get temperature for specified city
@@ -319,7 +345,6 @@ function SearchTempForCity(city) {
     url: "http://api.openweathermap.org/data/2.5/weather",
     data: "q=" + city + "&appid=70ef0ec48add544e91d4d3f76b0ae626",
     success: function(data) {
-      console.log(data);
       //setting today's icon
       $(".TodayWeatherIcon").attr(
         "src",
@@ -343,15 +368,8 @@ function SearchTempForCity(city) {
     url: "http://api.openweathermap.org/data/2.5/forecast",
     data: "q=" + city + "&appid=70ef0ec48add544e91d4d3f76b0ae626",
     success: function(data) {
-      //alert(data.list[0].weather[0].main);
-      console.log(data);
-      console.log(data.list[0].weather[0].main);
-
       document.querySelector(".location-timezone").innerText =
         data.city.name + ", " + data.city.country;
-
-      /*document.querySelector(".temperature-time").innerText =
-      data.list[0].dt_txt;*/
 
       //setting Icons
 
@@ -393,6 +411,7 @@ function SearchTempForCity(city) {
   });
 }
 
+//Adding Search function to .SearchBtn onclick eventHandler
 document.querySelector(".SearchBtn").addEventListener("click", function(e) {
   let SearchQuery = document.querySelector(".SearchFld").value;
   if (SearchQuery === "" || SearchQuery === null) {
@@ -401,3 +420,17 @@ document.querySelector(".SearchBtn").addEventListener("click", function(e) {
     SearchTempForCity(SearchQuery);
   }
 });
+
+//functions for getting UVI data
+function getCurrentUV(lat, long) {
+  $.ajax({
+    type: "GET",
+    url: "http://api.openweathermap.org/data/2.5/uvi",
+    data: "appid=70ef0ec48add544e91d4d3f76b0ae626&lat=" + lat + "&lon=" + long,
+    success: function(resp) {
+      console.log(resp);
+    }
+  });
+}
+
+//function getUVByCitySearch(city) {}
