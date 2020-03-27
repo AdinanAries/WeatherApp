@@ -79,10 +79,15 @@ body {
 }
 
 .SUVIndicator {
-  border-left: 25px solid violet;
+  border-radius: 5px;
+  border-left-width: 25px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-top: 0;
+  border-right: 0;
   width: 320px;
   height: 25px;
-  padding-left: 1px;
+  padding-left: 4px;
 }
 .AdditionalDayTable {
   font-size: 14px;
@@ -129,4 +134,35 @@ body {
 
 .ExtraDaysTemp {
   text-align: center;
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    position: initial;
+    min-height: 700px;
+  }
+  .container {
+    background: none;
+    box-shadow: 0 0 0 0;
+    margin: auto;
+    width: 100%;
+  }
+  .DateSUV {
+    width: 98%;
+    padding: 0;
+  }
+  .SUVIndicator {
+    width: 100%;
+  }
+  .SearchDiv {
+    top: initial;
+    position: initial;
+    margin-top: 10px;
+    width: 98%;
+    max-width: 400px;
+    background-color: darkslateblue;
+    padding: 3px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 0 0;
+  }
 }

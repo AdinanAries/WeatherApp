@@ -72,19 +72,19 @@ var Day2DisplayDate;
 
 var Day2Suffix = "th";
 
-if (Day2Date.toString().charAt(Day2Date.toString.length - 1) === "1")
+if (Day2Date.toString().charAt(Day2Date.toString().length - 1) === "1")
   Day2Suffix = "st";
 
-if (Day2Date.toString().charAt(Day2Date.toString.length - 1) === "2")
+if (Day2Date.toString().charAt(Day2Date.toString().length - 1) === "2")
   Day2Suffix = "nd";
 
-if (Day2Date.toString().charAt(Day2Date.toString.length - 1) === "3")
+if (Day2Date.toString().charAt(Day2Date.toString().length - 1) === "3")
   Day2Suffix = "rd";
-if (Day2Date.toString().length === 2) {
+/*if (Day2Date.toString().length === 2) {
   if (Day2Date.toString().charAt(Day2Date.toString.length - 1) === "1")
     //alert(DayOfMonth.toString().charAt(DayOfMonth.toString.length - 2));
     Day2Suffix = "th";
-}
+}*/
 
 Day2DisplayDate = Day2Date + Day2Suffix + ", " + ShortWeek[Day2.getDay()];
 document.getElementById("Day2").innerText = Day2DisplayDate;
@@ -99,19 +99,19 @@ var Day3DisplayDate;
 
 var Day3Suffix = "th";
 
-if (Day3Date.toString().charAt(Day3Date.toString.length - 1) === "1")
+if (Day3Date.toString().charAt(Day3Date.toString().length - 1) === "1")
   Day3Suffix = "st";
 
-if (Day3Date.toString().charAt(Day3Date.toString.length - 1) === "2")
+if (Day3Date.toString().charAt(Day3Date.toString().length - 1) === "2")
   Day3Suffix = "nd";
 
-if (Day3Date.toString().charAt(Day3Date.toString.length - 1) === "3")
+if (Day3Date.toString().charAt(Day3Date.toString().length - 1) === "3")
   Day3Suffix = "rd";
-if (Day3Date.toString().length === 2) {
+/*if (Day3Date.toString().length === 2) {
   if (Day3Date.toString().charAt(Day3Date.toString.length - 1) === "1")
     //alert(DayOfMonth.toString().charAt(DayOfMonth.toString.length - 2));
     Day3Suffix = "th";
-}
+}*/
 
 Day3DisplayDate = Day3Date + Day3Suffix + ", " + ShortWeek[Day3.getDay()];
 document.getElementById("Day3").innerText = Day3DisplayDate;
@@ -126,19 +126,19 @@ var Day4DisplayDate;
 
 var Day4Suffix = "th";
 
-if (Day4Date.toString().charAt(Day4Date.toString.length - 1) === "1")
+if (Day4Date.toString().charAt(Day4Date.toString().length - 1) === "1")
   Day4Suffix = "st";
 
-if (Day4Date.toString().charAt(Day4Date.toString.length - 1) === "2")
+if (Day4Date.toString().charAt(Day4Date.toString().length - 1) === "2")
   Day4Suffix = "nd";
 
-if (Day4Date.toString().charAt(Day4Date.toString.length - 1) === "3")
+if (Day4Date.toString().charAt(Day4Date.toString().length - 1) === "3")
   Day4Suffix = "rd";
-if (Day4Date.toString().length === 2) {
+/*if (Day4Date.toString().length === 2) {
   if (Day4Date.toString().charAt(Day4Date.toString.length - 1) === "1")
     //alert(DayOfMonth.toString().charAt(DayOfMonth.toString.length - 2));
     Day4Suffix = "th";
-}
+}*/
 
 Day4DisplayDate = Day4Date + Day4Suffix + ", " + ShortWeek[Day4.getDay()];
 document.getElementById("Day4").innerText = Day4DisplayDate;
@@ -153,19 +153,19 @@ var Day5DisplayDate;
 
 var Day5Suffix = "th";
 
-if (Day5Date.toString().charAt(Day5Date.toString.length - 1) === "1")
+if (Day5Date.toString().charAt(Day5Date.toString().length - 1) === "1")
   Day5Suffix = "st";
 
-if (Day5Date.toString().charAt(Day5Date.toString.length - 1) === "2")
+if (Day5Date.toString().charAt(Day5Date.toString().length - 1) === "2")
   Day5Suffix = "nd";
 
-if (Day5Date.toString().charAt(Day5Date.toString.length - 1) === "3")
+if (Day5Date.toString().charAt(Day5Date.toString().length - 1) === "3")
   Day5Suffix = "rd";
-if (Day5Date.toString().length === 2) {
+/*if (Day5Date.toString().length === 2) {
   if (Day5Date.toString().charAt(Day5Date.toString.length - 1) === "1")
     //alert(DayOfMonth.toString().charAt(DayOfMonth.toString.length - 2));
     Day5Suffix = "th";
-}
+}*/
 
 Day5DisplayDate = Day5Date + Day5Suffix + ", " + ShortWeek[Day5.getDay()];
 document.getElementById("Day5").innerText = Day5DisplayDate;
@@ -187,19 +187,19 @@ DisplayedDate += DayOfMonth.toString();
 
 var DaySuffix = "th";
 
-if (DayOfMonth.toString().charAt(DayOfMonth.toString.length - 1) === "1")
+if (DayOfMonth.toString().charAt(DayOfMonth.toString().length - 1) === "1")
   DaySuffix = "st";
 
-if (DayOfMonth.toString().charAt(DayOfMonth.toString.length - 1) === "2")
+if (DayOfMonth.toString().charAt(DayOfMonth.toString().length - 1) === "2")
   DaySuffix = "nd";
 
-if (DayOfMonth.toString().charAt(DayOfMonth.toString.length - 1) === "3")
+if (DayOfMonth.toString().charAt(DayOfMonth.toString().length - 1) === "3")
   DaySuffix = "rd";
-if (DayOfMonth.toString().length === 2) {
+/*if (DayOfMonth.toString().length === 2) {
   if (DayOfMonth.toString().charAt(DayOfMonth.toString.length - 1) === "1")
     //alert(DayOfMonth.toString().charAt(DayOfMonth.toString.length - 2));
     DaySuffix = "th";
-}
+}*/
 
 DisplayedDate += DaySuffix;
 
@@ -262,7 +262,6 @@ function OnPageLoadAPICall(lat, long) {
     data:
       "lat=" + lat + "&lon=" + long + "&appid=70ef0ec48add544e91d4d3f76b0ae626",
     success: function(data) {
-      console.log(data);
       //setting today's icon
       $(".TodayWeatherIcon").attr(
         "src",
@@ -340,6 +339,8 @@ function SearchTempForCity(city) {
     url: "http://api.openweathermap.org/data/2.5/weather",
     data: "q=" + city + "&appid=70ef0ec48add544e91d4d3f76b0ae626",
     success: function(data) {
+      //adding data for search history
+      localStorage.setItem(city, JSON.stringify(data));
       //setting today's icon
       $(".TodayWeatherIcon").attr(
         "src",
@@ -363,6 +364,10 @@ function SearchTempForCity(city) {
     url: "http://api.openweathermap.org/data/2.5/forecast",
     data: "q=" + city + "&appid=70ef0ec48add544e91d4d3f76b0ae626",
     success: function(data) {
+      //Building SeachHistory
+      let ForeCastHistKey = city + "FC";
+      localStorage.setItem(ForeCastHistKey, JSON.stringify(data));
+      //alert(JSON.parse(localStorage.getItem(ForeCastHistKey)));
       document.querySelector(".location-timezone").innerText =
         data.city.name + ", " + data.city.country;
 
@@ -416,6 +421,9 @@ document.querySelector(".SearchBtn").addEventListener("click", function(e) {
   }
 });
 
+var SUVNumber = document.getElementById("SUVNumber");
+var SUVIndicator = document.querySelector(".SUVIndicator");
+
 //functions for getting UVI data
 function getCurrentUV(lat, long) {
   $.ajax({
@@ -427,63 +435,58 @@ function getCurrentUV(lat, long) {
       var UVValue = Math.floor(resp.value);
 
       if (UVValue <= 2) {
-        let SUVNumber = document.getElementById("SUVNumber");
         let UVNum = UVIObjects[0].value;
         let UVRem = UVIObjects[0].Rem;
         let UVDesc = UVIObjects[0].Desc;
         let UVCol = UVIObjects[0].color;
 
-        let UvDisplay = `UV(${UVNum}): ${UVRem}, ${UVDesc}`;
-        SUVNUmber.innerText = UvDisplay;
-        SUVNumber.style.borderLeft = "25px solid " + UVCol;
+        let UvDisplay = ` UV(${UVNum}), ${UVDesc}: ${UVRem}`;
+        SUVNumber.innerText = UvDisplay;
+        SUVIndicator.style.borderColor = UVCol;
       }
 
       if (UVValue > 2 && UVValue <= 5) {
-        let SUVNumber = document.getElementById("SUVNumber");
         let UVNum = UVIObjects[1].value;
         let UVRem = UVIObjects[1].Rem;
         let UVDesc = UVIObjects[1].Desc;
         let UVCol = UVIObjects[1].color;
 
-        let UvDisplay = `UV(${UVNum}): ${UVRem}, ${UVDesc}`;
-        SUVNUmber.innerText = UvDisplay;
-        SUVNumber.style.borderLeft = "25px solid " + UVCol;
+        let UvDisplay = ` UV(${UVNum}): ${UVDesc}, ${UVRem}`;
+        SUVNumber.innerText = UvDisplay;
+        SUVIndicator.style.borderColor = UVCol;
       }
 
       if (UVValue > 5 && UVValue <= 7) {
-        let SUVNumber = document.getElementById("SUVNumber");
         let UVNum = UVIObjects[2].value;
         let UVRem = UVIObjects[2].Rem;
         let UVDesc = UVIObjects[2].Desc;
         let UVCol = UVIObjects[2].color;
 
-        let UvDisplay = `UV(${UVNum}): ${UVRem}, ${UVDesc}`;
-        SUVNUmber.innerText = UvDisplay;
-        SUVNumber.style.borderLeft = "25px solid " + UVCol;
+        let UvDisplay = ` UV(${UVNum}): ${UVDesc}, ${UVRem}`;
+        SUVNumber.innerText = UvDisplay;
+        SUVIndicator.style.borderColor = UVCol;
       }
 
       if (UVValue > 7 && UVValue <= 10) {
-        var SUVNumber = document.getElementById("SUVNumber");
         let UVNum = UVIObjects[3].value;
         let UVRem = UVIObjects[3].Rem;
         let UVDesc = UVIObjects[3].Desc;
         let UVCol = UVIObjects[3].color;
 
-        let UvDisplay = `UV(${UVNum}): ${UVRem}, ${UVDesc}`;
-        SUVNUmber.innerText = UvDisplay;
-        SUVNumber.style.borderLeft = "25px solid " + UVCol;
+        let UvDisplay = ` UV(${UVNum}): ${UVDesc}, ${UVRem}`;
+        SUVNumber.innerText = UvDisplay;
+        SUVIndicator.style.borderColor = UVCol;
       }
 
       if (UVValue >= 11) {
-        let SUVNumber = document.getElementById("SUVNumber");
         let UVNum = UVIObjects[4].value;
         let UVRem = UVIObjects[4].Rem;
         let UVDesc = UVIObjects[4].Desc;
         let UVCol = UVIObjects[4].color;
 
-        let UvDisplay = `UV(${UVNum}): ${UVRem}, ${UVDesc}`;
-        SUVNUmber.innerText = UvDisplay;
-        SUVNumber.style.borderLeft = "25px solid " + UVCol;
+        let UvDisplay = ` UV(${UVNum}): ${UVDesc}, ${UVRem}`;
+        SUVNumber.innerText = UvDisplay;
+        SUVIndicator.style.borderColor = UVCol;
       }
     }
   });
@@ -501,3 +504,10 @@ function getCityUV(city) {
     }
   });
 }*/
+
+//function to getsearch History
+function GetSearchHistory(city) {
+  var data = JSON.parse(localStorage.getItem(city));
+  let CityFCKey = city + "FC";
+  var forecastData = JSON.parse(localStorage.getItem(CityFCKey));
+}
