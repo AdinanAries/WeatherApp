@@ -140,6 +140,7 @@ body {
   body {
     position: initial;
     min-height: 700px;
+    background: linear-gradient(rgba(47, 150, 163), rgb(69, 85, 179));
   }
   .container {
     background: none;
