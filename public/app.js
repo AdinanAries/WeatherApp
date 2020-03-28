@@ -258,14 +258,14 @@ function KelvToFeh(number) {
 function OnPageLoadAPICall(lat, long) {
   $.ajax({
     type: "GET",
-    url: "http://api.openweathermap.org/data/2.5/weather",
+    url: "https://api.openweathermap.org/data/2.5/weather",
     data:
       "lat=" + lat + "&lon=" + long + "&appid=70ef0ec48add544e91d4d3f76b0ae626",
     success: function(data) {
       //setting today's icon
       $(".TodayWeatherIcon").attr(
         "src",
-        "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
+        "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
       );
 
       //displaying temperature description
@@ -282,7 +282,7 @@ function OnPageLoadAPICall(lat, long) {
   //Getting weather forecast of next five days
   $.ajax({
     type: "GET",
-    url: "http://api.openweathermap.org/data/2.5/forecast",
+    url: "https://api.openweathermap.org/data/2.5/forecast",
     data:
       "lat=" + lat + "&lon=" + long + "&appid=70ef0ec48add544e91d4d3f76b0ae626",
     success: function(data) {
@@ -294,28 +294,28 @@ function OnPageLoadAPICall(lat, long) {
       //tomorrow
       $("#Day2Icon").attr(
         "src",
-        "http://openweathermap.org/img/wn/" +
+        "https://openweathermap.org/img/wn/" +
           data.list[0].weather[0].icon +
           "@2x.png"
       );
       //day 3
       $("#Day3Icon").attr(
         "src",
-        "http://openweathermap.org/img/wn/" +
+        "https://openweathermap.org/img/wn/" +
           data.list[7].weather[0].icon +
           "@2x.png"
       );
       //day 4
       $("#Day4Icon").attr(
         "src",
-        "http://openweathermap.org/img/wn/" +
+        "https://openweathermap.org/img/wn/" +
           data.list[15].weather[0].icon +
           "@2x.png"
       );
       //day 3
       $("#Day5Icon").attr(
         "src",
-        "http://openweathermap.org/img/wn/" +
+        "https://openweathermap.org/img/wn/" +
           data.list[23].weather[0].icon +
           "@2x.png"
       );
@@ -336,7 +336,7 @@ function SearchTempForCity(city) {
   //api.openweathermap.org/data/2.5/forecast?q={city name}&appid={your api key}
   $.ajax({
     type: "GET",
-    url: "http://api.openweathermap.org/data/2.5/weather",
+    url: "https://api.openweathermap.org/data/2.5/weather",
     data: "q=" + city + "&appid=70ef0ec48add544e91d4d3f76b0ae626",
     success: function(data) {
       //adding data for search history
@@ -344,7 +344,7 @@ function SearchTempForCity(city) {
       //setting today's icon
       $(".TodayWeatherIcon").attr(
         "src",
-        "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
+        "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
       );
 
       //displaying temperature description
@@ -361,7 +361,7 @@ function SearchTempForCity(city) {
   //Getting weather forecast of next five days
   $.ajax({
     type: "GET",
-    url: "http://api.openweathermap.org/data/2.5/forecast",
+    url: "https://api.openweathermap.org/data/2.5/forecast",
     data: "q=" + city + "&appid=70ef0ec48add544e91d4d3f76b0ae626",
     success: function(data) {
       //Building SeachHistory
@@ -376,28 +376,28 @@ function SearchTempForCity(city) {
       //tomorrow
       $("#Day2Icon").attr(
         "src",
-        "http://openweathermap.org/img/wn/" +
+        "https://openweathermap.org/img/wn/" +
           data.list[0].weather[0].icon +
           "@2x.png"
       );
       //day 3
       $("#Day3Icon").attr(
         "src",
-        "http://openweathermap.org/img/wn/" +
+        "https://openweathermap.org/img/wn/" +
           data.list[7].weather[0].icon +
           "@2x.png"
       );
       //day 4
       $("#Day4Icon").attr(
         "src",
-        "http://openweathermap.org/img/wn/" +
+        "https://openweathermap.org/img/wn/" +
           data.list[15].weather[0].icon +
           "@2x.png"
       );
       //day 3
       $("#Day5Icon").attr(
         "src",
-        "http://openweathermap.org/img/wn/" +
+        "https://openweathermap.org/img/wn/" +
           data.list[23].weather[0].icon +
           "@2x.png"
       );
@@ -428,7 +428,7 @@ var SUVIndicator = document.querySelector(".SUVIndicator");
 function getCurrentUV(lat, long) {
   $.ajax({
     type: "GET",
-    url: "http://api.openweathermap.org/data/2.5/uvi",
+    url: "https://api.openweathermap.org/data/2.5/uvi",
     data: "appid=70ef0ec48add544e91d4d3f76b0ae626&lat=" + lat + "&lon=" + long,
     success: function(resp) {
       console.log(resp);
